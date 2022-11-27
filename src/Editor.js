@@ -4,7 +4,7 @@ function Editor() {
     return (
         <main className='Editor'>
             <header className='EditorToolbar'>
-                <h1>Title</h1>
+                <h3>Title</h3>
                 <div className='EditorButtons'>
                     <button>Edit</button>
                     <button>Delete</button>

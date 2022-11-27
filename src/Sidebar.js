@@ -2,7 +2,7 @@ import './Sidebar.css';
 
 function Note() {
     return (
-        <div className="Note">
+        <div className="Note Note-Selected">
             <h3>Title</h3>
             <p>
                 From which we spring quasar rings of Uranus a still more glorious dawn awaits
