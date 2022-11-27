@@ -1,10 +1,10 @@
 .Sidebar {
+  flex: 0 0 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0px;
   gap: 20px;
-  width: 360px;
   left: 0px;
   top: 0px;
   background: #252525;
