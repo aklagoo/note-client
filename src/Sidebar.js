@@ -1,24 +1,26 @@
 import './Sidebar.css';
 
-function Note() {
+function Note(props) {
     return (
-        <div className="Note Note-Selected">
-            <h3>Title</h3>
-            <p>
-                From which we spring quasar rings of Uranus a still more glorious dawn awaits
-                laws of physics the sky calls to us. Hearts of the stars venture great turbulent
-                clouds a very small stage in a vast cosmic arena hydrogen atoms a very small stage
-                in a vast cosmic arena.
-            </p>
+        <div className={"Note" + props.selected?" Note-Selected":""}>
+            <h3>{props.title}</h3>
+            <p>{props.preview}</p>
         </div>
     )
 }
 
-function Sidebar() {
+function Sidebar(props) {
     return (
         <aside className="Sidebar">
             <button className="ButtonNew"> + New Note </button>
-            <Note></Note>
+            {
+                props.notes.map((note, i)=>{
+                    if (i === props.index)
+                        return <Note title={note.title} preview={note.preview} selected={true}/>
+                    else
+                    return <Note title={note.title} preview={note.preview} selected={false}/>
+                })
+            }
         </aside>
     );
 }
