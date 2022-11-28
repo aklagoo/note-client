@@ -21,8 +21,8 @@ function App() {
       preview: '',
       text: '',
     }]);
-    setEditing(true);
     setIndex(index + 1);
+    setEditing(true);
   };
 
   /* Update note. */
@@ -67,7 +67,7 @@ function App() {
         addNewNote={addNewNote}
       />
       <Editor
-        note={index>0 ? notes[index]:{}}
+        note={index > -1? notes[index]: {}}
         index={index}
         editing={editing}
         updateNote={updateNote}

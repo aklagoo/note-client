@@ -1,25 +1,27 @@
+import { createRef } from 'react';
 import './Editor.css';
 
-function Editor() {
+function Editor(props) {
+    let text = createRef();
+    if(props.index === -1)
+        return (<main className='Editor'>
+            <p>Add a note to get started.</p>
+        </main>)
+
     return (
         <main className='Editor'>
             <header className='EditorToolbar'>
-                <h3>Title</h3>
+                <h3>{props.note.title !== '' ? props.note.title: 'Untitled'}</h3>
                 <div className='EditorButtons'>
-                    <button>Edit</button>
+                    <button onClick={() => {props.updateNote(props.index, text.current.value)}}>Edit</button>
                     <button>Delete</button>
                 </div>
             </header>
             <article className='EditorContent'>
                 <div className='EditorHTML'>
-                    <p>
-                    From which we spring quasar rings of Uranus a still more glorious dawn awaits
-                    laws of physics the sky calls to us. Hearts of the stars venture great turbulent
-                    clouds a very small stage in a vast cosmic arena hydrogen atoms a very small stage
-                    in a vast cosmic arena.
-                    </p>
+                    <p></p>
                 </div>
-                <textarea className='EditorMDField'></textarea>
+                <textarea className='EditorMDField' ref={text} defaultValue={props.note.text}></textarea>
             </article>
         </main>
     );

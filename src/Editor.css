@@ -6,4 +6,5 @@
   gap: 40px;
   background: #1A1A1A;
   color: white;
+  flex-grow: 1;
 }
